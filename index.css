@@ -1,0 +1,114 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    :root {
+        --radius: 0.5rem;
+        --background: 0.98 0 0;
+        --foreground: 0.15 0 0;
+        --card: 1 0 0;
+        --card-foreground: 0.15 0 0;
+        --popover: 1 0 0;
+        --popover-foreground: 0.15 0 0;
+        --primary: 0.55 0.18 240;
+        --primary-foreground: 0.98 0 0;
+        --secondary: 0.96 0 0;
+        --secondary-foreground: 0.15 0 0;
+        --muted: 0.96 0 0;
+        --muted-foreground: 0.50 0 0;
+        --accent: 0.96 0 0;
+        --accent-foreground: 0.15 0 0;
+        --destructive: 0.58 0.22 25;
+        --destructive-foreground: 0.98 0 0;
+        --border: 0.90 0 0;
+        --input: 0.90 0 0;
+        --ring: 0.55 0.18 240;
+        --chart-1: 0.65 0.20 240;
+        --chart-2: 0.60 0.15 180;
+        --chart-3: 0.55 0.18 120;
+        --chart-4: 0.70 0.22 60;
+        --chart-5: 0.75 0.20 300;
+        --sidebar: 0.98 0 0;
+        --sidebar-foreground: 0.15 0 0;
+        --sidebar-primary: 0.55 0.18 240;
+        --sidebar-primary-foreground: 0.98 0 0;
+        --sidebar-accent: 0.96 0 0;
+        --sidebar-accent-foreground: 0.15 0 0;
+        --sidebar-border: 0.90 0 0;
+        --sidebar-ring: 0.55 0.18 240;
+    }
+
+    .dark {
+        --background: 0.12 0 0;
+        --foreground: 0.98 0 0;
+        --card: 0.15 0 0;
+        --card-foreground: 0.98 0 0;
+        --popover: 0.15 0 0;
+        --popover-foreground: 0.98 0 0;
+        --primary: 0.65 0.20 240;
+        --primary-foreground: 0.12 0 0;
+        --secondary: 0.20 0 0;
+        --secondary-foreground: 0.98 0 0;
+        --muted: 0.20 0 0;
+        --muted-foreground: 0.65 0 0;
+        --accent: 0.25 0 0;
+        --accent-foreground: 0.98 0 0;
+        --destructive: 0.65 0.22 25;
+        --destructive-foreground: 0.12 0 0;
+        --border: 0.25 0 0;
+        --input: 0.25 0 0;
+        --ring: 0.65 0.20 240;
+        --chart-1: 0.55 0.22 260;
+        --chart-2: 0.70 0.18 160;
+        --chart-3: 0.75 0.20 100;
+        --chart-4: 0.65 0.25 40;
+        --chart-5: 0.60 0.22 320;
+        --sidebar: 0.15 0 0;
+        --sidebar-foreground: 0.98 0 0;
+        --sidebar-primary: 0.65 0.20 240;
+        --sidebar-primary-foreground: 0.98 0 0;
+        --sidebar-accent: 0.20 0 0;
+        --sidebar-accent-foreground: 0.98 0 0;
+        --sidebar-border: 0.25 0 0;
+        --sidebar-ring: 0.65 0.20 240;
+    }
+
+    * {
+        @apply border-border;
+    }
+    body {
+        @apply bg-background text-foreground;
+    }
+}
+
+@layer components {
+    .keytip-badge {
+        @apply fixed z-[100] pointer-events-none;
+        @apply px-1.5 py-0.5 text-xs font-bold;
+        @apply bg-primary text-primary-foreground;
+        @apply border-2 border-primary-foreground;
+        @apply rounded shadow-lg;
+        @apply transform -translate-x-1/2 -translate-y-full;
+        border-color: oklch(var(--primary-foreground) / 0.2);
+        animation: keytip-appear 0.15s ease-out;
+    }
+
+    @keyframes keytip-appear {
+        from {
+            opacity: 0;
+            transform: translate(-50%, -100%) scale(0.8);
+        }
+        to {
+            opacity: 1;
+            transform: translate(-50%, -100%) scale(1);
+        }
+    }
+
+    /* High contrast support */
+    @media (prefers-contrast: high) {
+        .keytip-badge {
+            @apply border-4 border-foreground;
+        }
+    }
+}
