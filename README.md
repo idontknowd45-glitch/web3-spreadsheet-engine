@@ -4,7 +4,6 @@ A minimal Excel-style spreadsheet web application with:
 
 - Editable grid (cells A1, B2…)
 - Formatting (bold, italic, alignment)
-- 5-color system (White, Black, Red, Dark Blue, Green)
 - Insert images (draggable + resizable)
 - Undo / Redo system
 - Sheet tabs (create, switch)
