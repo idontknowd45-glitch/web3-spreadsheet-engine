@@ -65,6 +65,9 @@ A minimal Excel-style spreadsheet web application with:
 - SheetJS (xlsx import)  
 
 ## 📦 Running Locally
+💰 Buy the full source code here:
+👉 https://mysterymind755.gumroad.com/l/skzqz
+
 
 ```bash
 npm install
